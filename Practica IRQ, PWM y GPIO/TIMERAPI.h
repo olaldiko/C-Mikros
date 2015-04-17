@@ -2,6 +2,12 @@
 #define TIMERAPI_H
 #include <stdint.h>
 #include <stm32f4xx.h>
+
+
+// Sortu funtzioen helbideak gordetzeko datu mota
+typedef void (*funtzio_helbidea_t)(void);
+
+
 //Aktibatu Timer6a RCCan
 void aktTimer(void);
 //Ezarri kontadore eta prescalerra
@@ -26,7 +32,14 @@ void setOnePulse(int mode);
 void setUpdateIRQ(int mode);
 //Ezarri interrupzioak kasu guztietan edo bakarrik overflowetan sortuko diren
 void setInterruptSource(int mode);
-
+//Garbitu interrupzioa
+void clearInterrupt(void);
+//Hasieratu interrupzio sistema
+void initIRQ_TIM6(void);
+//Ezarri interrupzioan exekutatuko den funtzioa	
+void ezarriIRQFunc(funtzio_helbidea_t func);
+//Inizializatu timerraren interrupzioak
+void initIRQ_TIM6(void);
 #endif
 
 

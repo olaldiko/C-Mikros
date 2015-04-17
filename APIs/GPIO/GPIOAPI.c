@@ -5,12 +5,11 @@
 
 
 void aktdesgpio(int portua, int egoera){
-		RCC_TypeDef *rcc = RCC;
 	if((portua >= 0)&&(portua <=10)){
 			if(egoera == 0){
-				rcc->AHB1ENR &= ~(1<<portua);
+				RCC->AHB1ENR &= ~(1<<portua);
 			}else{
-				rcc->AHB1ENR |= (1<<portua);
+				RCC->AHB1ENR |= (1<<portua);
 			}				
 	}
 }
@@ -103,7 +102,7 @@ uint32_t irakurripin(int portua, int pina){
 			uint32_t erregistroa = gpio->IDR;
 	if((portua >= 0)&&(portua <= 10)){
 		if((pina >= 0)&&(pina <=	15)){
-				erregistroa &= (1<<portua);
+				erregistroa &= (1<<pina);
 				if(erregistroa > 0 ){
 						return 1;
 				}else{

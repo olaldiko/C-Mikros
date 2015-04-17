@@ -103,7 +103,7 @@ uint32_t irakurripin(int portua, int pina){
 			uint32_t erregistroa = gpio->IDR;
 	if((portua >= 0)&&(portua <= 10)){
 		if((pina >= 0)&&(pina <=	15)){
-				erregistroa &= (1<<portua);
+				erregistroa &= (1<<pina);
 				if(erregistroa > 0 ){
 						return 1;
 				}else{

@@ -1,86 +1,94 @@
 #ifndef TIMERAPI_C
 #define TIMERAPI_C
-#include "TIMERAPI.h"
 
-void aktTimer(){
-	RCC_TypeDef *rcc = RCC;
+#include "TIMERAPI.h"
+#include "stm32f4xx.h"
+
+funtzio_helbidea_t funcIrq;
+
+void aktTimer(void){
 	RCC->APB1ENR |= (1<<4);
 }
 void setTime(uint16_t prescaler, uint16_t counter){
-	TIM_TypeDef *timer = TIM6;
-	timer->PSC = prescaler;
-	timer->ARR = counter;
+	TIM6->PSC = prescaler;
+	TIM6->ARR = counter;
 }
-uint16_t getCounter(){
-	TIM_TypeDef *timer = TIM6;
-	return timer->CNT;
+uint16_t getCounter(void){
+	return TIM6->CNT;
 }
 void setLimitea(uint16_t counter){
-	TIM_TypeDef *timer = TIM6;
-	timer->ARR = counter;
+	TIM6->ARR = counter;
 }
-uint16_t isUpdate(){
+uint16_t isUpdate(void){
 	uint16_t update;
-	TIM_TypeDef *timer = TIM6;
-	update = timer->SR;
+	update = TIM6->SR;
 	update &= 1;
 	if(update == 1){
-		timer->SR = 0x00;
+		TIM6->SR = 0x00;
 	}
 	return update;
 }
-void startCounter(){
-	TIM_TypeDef *timer = TIM6;
-	timer->CR1 |= 0x01;
+void startCounter(void){
+	TIM6->CR1 |= 0x01;
 }
-void stopCounter(){
-	TIM_TypeDef *timer = TIM6;
-	timer->CR1 &= ~(0x01);
+void stopCounter(void){
+	TIM6->CR1 &= ~(0x01);
 }
 void setUpdateMode(int mode){
-	TIM_TypeDef *timer = TIM6;
 	switch(mode){
 		case 0:
-			timer->EGR = 0x00;
+			TIM6->EGR = 0x00;
 		break;
 		case 1:
-			timer->EGR = 0x01;
+			TIM6->EGR = 0x01;
 		break;
 	}
 }
 void setDebugMode(int piztua){
-	DBGMCU_TypeDef *debugreg = DBGMCU;
 	if(piztua == 1){
-		debugreg->APB1FZ |= (1<<4);
+		DBGMCU->APB1FZ |= (1<<4);
 	}else{
-		debugreg->APB1FZ &= ~(1<<4);
+		DBGMCU->APB1FZ &= ~(1<<4);
 	}
 	
 }
 void setOnePulse(int mode){
-	TIM_TypeDef *timer = TIM6;
 	if(mode == 1){
-		timer->CR1 |= (1<<2);
+		TIM6->CR1 |= (1<<2);
 	}else{
-		timer->CR1 &= ~(1<<2);
+		TIM6->CR1 &= ~(1<<2);
 	}	
 }
 void setUpdateIRQ(int mode){
-	TIM_TypeDef *timer = TIM6;
 	if(mode == 1){
-		timer->DIER |=0x01;
+		TIM6->DIER |=0x01;
 	}else{
-		timer->DIER &= ~(0x01);
+		TIM6->DIER &= ~(0x01);
 	}
 }
 void setInterruptSource(int mode){
-	TIM_TypeDef *timer = TIM6;
 	if(mode == 1){
-		timer->CR1 |= (1<<2);
+		TIM6->CR1 |= (1<<2);
 	}else{
-		timer->CR1 &= ~(1<<2);
+		TIM6->CR1 &= ~(1<<2);
 	}
 }
-
+void clearInterrupt(void){
+	TIM6->SR = 0x0;
+}
+void TIM6_DAC_IRQHandler(void){
+	funcIrq();
+	TIM6->SR = 0x0;
+	NVIC_ClearPendingIRQ(TIM6_DAC_IRQn);
+}
+void ezarriIRQFunc(funtzio_helbidea_t func){
+	funcIrq = func;
+}
+void initIRQ_TIM6(void){
+	setInterruptSource(1);
+	setUpdateIRQ(1);
+	NVIC_EnableIRQ(TIM6_DAC_IRQn);
+	
+}
 #endif
 
