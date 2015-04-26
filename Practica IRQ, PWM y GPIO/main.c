@@ -52,7 +52,10 @@ int main(void){
 		}
 	}
 }
-
+/** 
+*GPIO init function. Initializes all the needed gpio ports and configures the pins.
+*
+*/
 void initGPIO(void){
 	aktdesgpio(PORTLED, 1);
 	aktdesgpio(PORTBUZ, 1);
@@ -65,6 +68,10 @@ void initGPIO(void){
 	setpinmode(PORTJOY, JOYBEHERA, 1);
 	setpinmode(PORTBUZ, BUZ, 2);
 }
+
+/** 
+*Timer init function. Activates the timer and sets all the needed configuration bits.
+*/
 void initTimer(void){
 	aktTimer();
 	setDebugMode(1);
@@ -74,6 +81,12 @@ void initTimer(void){
 	setInterruptSource(1);
 	
 }
+/**
+*IRQ Initialization function. Initializes the EXTIand configures it, configures the SYSCFG
+*for choosing the ports that generate an event or interrupt 
+*and sets the function to call when an interrupt occurs.
+*For now the GPIO interrupt setup is disabled.
+*/
 void initIRQ(void){
 	RCC_TypeDef *rcc = RCC;
 	EXTI_TypeDef *exti = EXTI;
@@ -95,7 +108,9 @@ void initIRQ(void){
 	ezarriIRQFunc(timerInterrupzioa);
 	initIRQ_TIM6();
 }
-
+/**
+*The GPIO interrumpt function. This function is called when an interruption occurs in the EXTI 5 to 9 ports.
+*/
 void EXTI9_5_IRQHandler(void){
 	EXTI_TypeDef *exti = EXTI;
 	if(irakurripin(PORTJOY, JOYGORA) == 1){
@@ -118,7 +133,10 @@ void EXTI9_5_IRQHandler(void){
 	
 	NVIC_ClearPendingIRQ(EXTI9_5_IRQn);
 }
-
+/**
+*The function that will be called when a timer interrumpt occurs.
+*It will set the on or off time for the led and will also start the counter again.
+*/
 void timerInterrupzioa(void){
 	if(ledstat == 0){
 			ledstat = 1;

@@ -1,0 +1,163 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+I\+M\+E\+R\+A\+P\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+A\+P\+I.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a25f00bfbfb09fb620230c6ccb32979b1}{P\+O\+R\+T\+L\+E\+D}~5
+\item 
+\#define \hyperlink{main_8c_a455f87263617c69a4b46e38c1513cf71}{P\+O\+R\+T\+B\+U\+Z}~1
+\item 
+\#define \hyperlink{main_8c_aeb36ea0014f902986761fd68f46e9851}{B\+U\+Z}~1
+\item 
+\#define \hyperlink{main_8c_ae048837f20072bed467332b1bd1da9fa}{L\+E\+D4}~9
+\item 
+\#define \hyperlink{main_8c_a4b7ff8e253a7412f83deba3a447028a8}{L\+E\+D3}~8
+\item 
+\#define \hyperlink{main_8c_ad09fe5bf321b9a2de26bd5e5b9af6424}{L\+E\+D2}~7
+\item 
+\#define \hyperlink{main_8c_a8aa85ae9867fabf70ec72cd3bf6fb6b9}{L\+E\+D1}~6
+\item 
+\#define \hyperlink{main_8c_a7bf08e8941b3c779f99661780e576070}{P\+O\+R\+T\+J\+O\+Y}~6
+\item 
+\#define \hyperlink{main_8c_a7fb417b931f7b43674562f20b2bf626e}{J\+O\+Y\+G\+O\+R\+A}~8
+\item 
+\#define \hyperlink{main_8c_a98f1cd4b679c31c9006966a1f98b8883}{J\+O\+Y\+B\+E\+H\+E\+R\+A}~7
+\item 
+\#define \hyperlink{main_8c_af281425e62298bac2df0fbe8690a4844}{P\+E\+R\+I\+O\+D}~100
+\item 
+\#define \hyperlink{main_8c_a9c168a1dca42d6d9da6d435ef7e4d7f1}{P\+R\+E\+S\+C}~0
+\item 
+\#define \hyperlink{main_8c_ab5a83a72d519e10a0fcc8adbb15aab43}{S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C}~14
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_ad442c62b85591b16bbebcc35c9e63dc3}{init\+G\+P\+I\+O} (void)
+\item 
+void \hyperlink{main_8c_a02922529b60419a94afe8f369dda070b}{init\+Timer} (void)
+\item 
+void \hyperlink{main_8c_a0b2f707f9d53b1b191fc3f1f832a3a5a}{init\+I\+R\+Q} (void)
+\item 
+void \hyperlink{main_8c_a7b2096b8b2643286dc3a7e5110e5ae85}{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+void \hyperlink{main_8c_abf4df587996c332a2915fa183043beac}{timer\+Interrupzioa} (void)
+\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{main_8c_a61b96c8a17854d6fd2ab07d3c2e9382c}{cnton} = 1000
+\item 
+uint16\+\_\+t \hyperlink{main_8c_ac3607d710f0a96c20efe074fe0b96588}{cntoff} = 29000
+\item 
+uint16\+\_\+t \hyperlink{main_8c_a9c77d63090b288b87e0a6e3cd4da3082}{pot} = 10
+\item 
+volatile uint16\+\_\+t \hyperlink{main_8c_aeeb91e77478191dea7efbedb889d24d7}{ledstat} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{main_8c_aeb36ea0014f902986761fd68f46e9851}{}\index{main.\+c@{main.\+c}!B\+U\+Z@{B\+U\+Z}}
+\index{B\+U\+Z@{B\+U\+Z}!main.\+c@{main.\+c}}
+\subsubsection[{B\+U\+Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+Z~1}\label{main_8c_aeb36ea0014f902986761fd68f46e9851}
+\hypertarget{main_8c_a98f1cd4b679c31c9006966a1f98b8883}{}\index{main.\+c@{main.\+c}!J\+O\+Y\+B\+E\+H\+E\+R\+A@{J\+O\+Y\+B\+E\+H\+E\+R\+A}}
+\index{J\+O\+Y\+B\+E\+H\+E\+R\+A@{J\+O\+Y\+B\+E\+H\+E\+R\+A}!main.\+c@{main.\+c}}
+\subsubsection[{J\+O\+Y\+B\+E\+H\+E\+R\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define J\+O\+Y\+B\+E\+H\+E\+R\+A~7}\label{main_8c_a98f1cd4b679c31c9006966a1f98b8883}
+\hypertarget{main_8c_a7fb417b931f7b43674562f20b2bf626e}{}\index{main.\+c@{main.\+c}!J\+O\+Y\+G\+O\+R\+A@{J\+O\+Y\+G\+O\+R\+A}}
+\index{J\+O\+Y\+G\+O\+R\+A@{J\+O\+Y\+G\+O\+R\+A}!main.\+c@{main.\+c}}
+\subsubsection[{J\+O\+Y\+G\+O\+R\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define J\+O\+Y\+G\+O\+R\+A~8}\label{main_8c_a7fb417b931f7b43674562f20b2bf626e}
+\hypertarget{main_8c_a8aa85ae9867fabf70ec72cd3bf6fb6b9}{}\index{main.\+c@{main.\+c}!L\+E\+D1@{L\+E\+D1}}
+\index{L\+E\+D1@{L\+E\+D1}!main.\+c@{main.\+c}}
+\subsubsection[{L\+E\+D1}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+D1~6}\label{main_8c_a8aa85ae9867fabf70ec72cd3bf6fb6b9}
+\hypertarget{main_8c_ad09fe5bf321b9a2de26bd5e5b9af6424}{}\index{main.\+c@{main.\+c}!L\+E\+D2@{L\+E\+D2}}
+\index{L\+E\+D2@{L\+E\+D2}!main.\+c@{main.\+c}}
+\subsubsection[{L\+E\+D2}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+D2~7}\label{main_8c_ad09fe5bf321b9a2de26bd5e5b9af6424}
+\hypertarget{main_8c_a4b7ff8e253a7412f83deba3a447028a8}{}\index{main.\+c@{main.\+c}!L\+E\+D3@{L\+E\+D3}}
+\index{L\+E\+D3@{L\+E\+D3}!main.\+c@{main.\+c}}
+\subsubsection[{L\+E\+D3}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+D3~8}\label{main_8c_a4b7ff8e253a7412f83deba3a447028a8}
+\hypertarget{main_8c_ae048837f20072bed467332b1bd1da9fa}{}\index{main.\+c@{main.\+c}!L\+E\+D4@{L\+E\+D4}}
+\index{L\+E\+D4@{L\+E\+D4}!main.\+c@{main.\+c}}
+\subsubsection[{L\+E\+D4}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+D4~9}\label{main_8c_ae048837f20072bed467332b1bd1da9fa}
+\hypertarget{main_8c_af281425e62298bac2df0fbe8690a4844}{}\index{main.\+c@{main.\+c}!P\+E\+R\+I\+O\+D@{P\+E\+R\+I\+O\+D}}
+\index{P\+E\+R\+I\+O\+D@{P\+E\+R\+I\+O\+D}!main.\+c@{main.\+c}}
+\subsubsection[{P\+E\+R\+I\+O\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+E\+R\+I\+O\+D~100}\label{main_8c_af281425e62298bac2df0fbe8690a4844}
+\hypertarget{main_8c_a455f87263617c69a4b46e38c1513cf71}{}\index{main.\+c@{main.\+c}!P\+O\+R\+T\+B\+U\+Z@{P\+O\+R\+T\+B\+U\+Z}}
+\index{P\+O\+R\+T\+B\+U\+Z@{P\+O\+R\+T\+B\+U\+Z}!main.\+c@{main.\+c}}
+\subsubsection[{P\+O\+R\+T\+B\+U\+Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T\+B\+U\+Z~1}\label{main_8c_a455f87263617c69a4b46e38c1513cf71}
+\hypertarget{main_8c_a7bf08e8941b3c779f99661780e576070}{}\index{main.\+c@{main.\+c}!P\+O\+R\+T\+J\+O\+Y@{P\+O\+R\+T\+J\+O\+Y}}
+\index{P\+O\+R\+T\+J\+O\+Y@{P\+O\+R\+T\+J\+O\+Y}!main.\+c@{main.\+c}}
+\subsubsection[{P\+O\+R\+T\+J\+O\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T\+J\+O\+Y~6}\label{main_8c_a7bf08e8941b3c779f99661780e576070}
+\hypertarget{main_8c_a25f00bfbfb09fb620230c6ccb32979b1}{}\index{main.\+c@{main.\+c}!P\+O\+R\+T\+L\+E\+D@{P\+O\+R\+T\+L\+E\+D}}
+\index{P\+O\+R\+T\+L\+E\+D@{P\+O\+R\+T\+L\+E\+D}!main.\+c@{main.\+c}}
+\subsubsection[{P\+O\+R\+T\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T\+L\+E\+D~5}\label{main_8c_a25f00bfbfb09fb620230c6ccb32979b1}
+\hypertarget{main_8c_a9c168a1dca42d6d9da6d435ef7e4d7f1}{}\index{main.\+c@{main.\+c}!P\+R\+E\+S\+C@{P\+R\+E\+S\+C}}
+\index{P\+R\+E\+S\+C@{P\+R\+E\+S\+C}!main.\+c@{main.\+c}}
+\subsubsection[{P\+R\+E\+S\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+E\+S\+C~0}\label{main_8c_a9c168a1dca42d6d9da6d435ef7e4d7f1}
+\hypertarget{main_8c_ab5a83a72d519e10a0fcc8adbb15aab43}{}\index{main.\+c@{main.\+c}!S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C@{S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C}}
+\index{S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C@{S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C}!main.\+c@{main.\+c}}
+\subsubsection[{S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+Y\+S\+C\+F\+G\+\_\+\+R\+C\+C~14}\label{main_8c_ab5a83a72d519e10a0fcc8adbb15aab43}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a7b2096b8b2643286dc3a7e5110e5ae85}{}\index{main.\+c@{main.\+c}!E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a7b2096b8b2643286dc3a7e5110e5ae85}
+The G\+P\+I\+O interrumpt function. This function is called when an interruption occurs in the E\+X\+T\+I 5 to 9 ports. \hypertarget{main_8c_ad442c62b85591b16bbebcc35c9e63dc3}{}\index{main.\+c@{main.\+c}!init\+G\+P\+I\+O@{init\+G\+P\+I\+O}}
+\index{init\+G\+P\+I\+O@{init\+G\+P\+I\+O}!main.\+c@{main.\+c}}
+\subsubsection[{init\+G\+P\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}void init\+G\+P\+I\+O (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_ad442c62b85591b16bbebcc35c9e63dc3}
+G\+P\+I\+O init function. Initializes all the needed gpio ports and configures the pins. \hypertarget{main_8c_a0b2f707f9d53b1b191fc3f1f832a3a5a}{}\index{main.\+c@{main.\+c}!init\+I\+R\+Q@{init\+I\+R\+Q}}
+\index{init\+I\+R\+Q@{init\+I\+R\+Q}!main.\+c@{main.\+c}}
+\subsubsection[{init\+I\+R\+Q}]{\setlength{\rightskip}{0pt plus 5cm}void init\+I\+R\+Q (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a0b2f707f9d53b1b191fc3f1f832a3a5a}
+I\+R\+Q Initialization function. Initializes the E\+X\+T\+Iand configures it, configures the S\+Y\+S\+C\+F\+G for choosing the ports that generate an event or interrupt and sets the function to call when an interrupt occurs. For now the G\+P\+I\+O interrupt setup is disabled. \hypertarget{main_8c_a02922529b60419a94afe8f369dda070b}{}\index{main.\+c@{main.\+c}!init\+Timer@{init\+Timer}}
+\index{init\+Timer@{init\+Timer}!main.\+c@{main.\+c}}
+\subsubsection[{init\+Timer}]{\setlength{\rightskip}{0pt plus 5cm}void init\+Timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a02922529b60419a94afe8f369dda070b}
+Timer init function. Activates the timer and sets all the needed configuration bits. \hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+\hypertarget{main_8c_abf4df587996c332a2915fa183043beac}{}\index{main.\+c@{main.\+c}!timer\+Interrupzioa@{timer\+Interrupzioa}}
+\index{timer\+Interrupzioa@{timer\+Interrupzioa}!main.\+c@{main.\+c}}
+\subsubsection[{timer\+Interrupzioa}]{\setlength{\rightskip}{0pt plus 5cm}void timer\+Interrupzioa (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_abf4df587996c332a2915fa183043beac}
+The function that will be called when a timer interrumpt occurs. It will set the on or off time for the led and will also start the counter again. 
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_ac3607d710f0a96c20efe074fe0b96588}{}\index{main.\+c@{main.\+c}!cntoff@{cntoff}}
+\index{cntoff@{cntoff}!main.\+c@{main.\+c}}
+\subsubsection[{cntoff}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t cntoff = 29000}\label{main_8c_ac3607d710f0a96c20efe074fe0b96588}
+\hypertarget{main_8c_a61b96c8a17854d6fd2ab07d3c2e9382c}{}\index{main.\+c@{main.\+c}!cnton@{cnton}}
+\index{cnton@{cnton}!main.\+c@{main.\+c}}
+\subsubsection[{cnton}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t cnton = 1000}\label{main_8c_a61b96c8a17854d6fd2ab07d3c2e9382c}
+\hypertarget{main_8c_aeeb91e77478191dea7efbedb889d24d7}{}\index{main.\+c@{main.\+c}!ledstat@{ledstat}}
+\index{ledstat@{ledstat}!main.\+c@{main.\+c}}
+\subsubsection[{ledstat}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint16\+\_\+t ledstat = 0}\label{main_8c_aeeb91e77478191dea7efbedb889d24d7}
+\hypertarget{main_8c_a9c77d63090b288b87e0a6e3cd4da3082}{}\index{main.\+c@{main.\+c}!pot@{pot}}
+\index{pot@{pot}!main.\+c@{main.\+c}}
+\subsubsection[{pot}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t pot = 10}\label{main_8c_a9c77d63090b288b87e0a6e3cd4da3082}

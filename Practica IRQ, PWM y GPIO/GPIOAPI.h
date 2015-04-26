@@ -2,7 +2,11 @@
 #define GPIOAPI_H
 #include <stdint.h>
 
-//Aktibatu edo desaktibatu gpio portua
+/**
+*Enables or disables the corresponding GPIO port.
+* @param portua The corresponding gpio port. 0-9
+* @param egoera 0 Disabled, 1 Enabled
+*/
 void aktdesgpio(int portua, int egoera);
 //Aktibatu edo desaktibatu pin baten irteera(Lehenengo out bezala konfiguratu)
 void aktdesgpioout(int portua, int pina, int egoera);

@@ -1,0 +1,225 @@
+\hypertarget{_t_i_m_e_r_a_p_i_8c}{}\section{Timer/\+T\+I\+M\+E\+R\+A\+P\+I.c File Reference}
+\label{_t_i_m_e_r_a_p_i_8c}\index{Timer/\+T\+I\+M\+E\+R\+A\+P\+I.\+c@{Timer/\+T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+{\ttfamily \#include \char`\"{}T\+I\+M\+E\+R\+A\+P\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_t_i_m_e_r_a_p_i_8c_af61d446e303685071e30468a1fa881f4}{T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a1cac4441649c68cfb4a188ece7b9697e}{akt\+Timer} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a5629e025b630604f99c5e2aae62913a2}{set\+Time} (uint16\+\_\+t prescaler, uint16\+\_\+t counter)
+\item 
+uint16\+\_\+t \hyperlink{_t_i_m_e_r_a_p_i_8c_acc51a8de5c5787c936fc16668259a6d5}{get\+Counter} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a78ae748d788787598b2bc55f95b9c521}{set\+Limitea} (uint16\+\_\+t counter)
+\item 
+uint16\+\_\+t \hyperlink{_t_i_m_e_r_a_p_i_8c_aad58f47d5b5c704e7f49ea0a4f43a7c3}{is\+Update} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a85527e63f93bba507c8379c80221fa7b}{start\+Counter} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a56e8348746bfdb7e6da7a76e89286be5}{stop\+Counter} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_adc26813f57c55f9ecff466aacdad2059}{set\+Update\+Mode} (int mode)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_aa45627a12d9a0ab4f27dd6ff0cdd65af}{set\+Debug\+Mode} (int piztua)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_ae82932d84c386f2a9f20e17c56469b3f}{set\+One\+Pulse} (int mode)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a83bcdccd05d316941c7f43473bc8041a}{set\+Update\+I\+R\+Q} (int mode)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a16efc42854a86a597d6ac93a001d8006}{set\+Interrupt\+Source} (int mode)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a540f573c1c8ad18b5e975a09f2202680}{clear\+Interrupt} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a0839a45f331c4c067939b9c4533bbf4d}{T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_a331aee9c988a71f161ecae70e161fbc9}{ezarri\+I\+R\+Q\+Func} (\hyperlink{_t_i_m_e_r_a_p_i_8h_ab49c0c9694a0ba978c4950e32063fa69}{funtzio\+\_\+helbidea\+\_\+t} func)
+\item 
+void \hyperlink{_t_i_m_e_r_a_p_i_8c_ac097cc43893b179c514009627450e7ac}{init\+I\+R\+Q\+\_\+\+T\+I\+M6} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_t_i_m_e_r_a_p_i_8h_ab49c0c9694a0ba978c4950e32063fa69}{funtzio\+\_\+helbidea\+\_\+t} \hyperlink{_t_i_m_e_r_a_p_i_8c_a97d0ea879f1108a0e1d26f351618d3ca}{func\+Irq}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_af61d446e303685071e30468a1fa881f4}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C@{T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C}}
+\index{T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C@{T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+M\+E\+R\+A\+P\+I\+\_\+\+C}\label{_t_i_m_e_r_a_p_i_8c_af61d446e303685071e30468a1fa881f4}
+
+
+\subsection{Function Documentation}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a1cac4441649c68cfb4a188ece7b9697e}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!akt\+Timer@{akt\+Timer}}
+\index{akt\+Timer@{akt\+Timer}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{akt\+Timer}]{\setlength{\rightskip}{0pt plus 5cm}void akt\+Timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a1cac4441649c68cfb4a188ece7b9697e}
+Enables the T\+I\+M6 timer in the R\+C\+C device. \hypertarget{_t_i_m_e_r_a_p_i_8c_a540f573c1c8ad18b5e975a09f2202680}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!clear\+Interrupt@{clear\+Interrupt}}
+\index{clear\+Interrupt@{clear\+Interrupt}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{clear\+Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a540f573c1c8ad18b5e975a09f2202680}
+Clears the timer interrupt pending bit. \hypertarget{_t_i_m_e_r_a_p_i_8c_a331aee9c988a71f161ecae70e161fbc9}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!ezarri\+I\+R\+Q\+Func@{ezarri\+I\+R\+Q\+Func}}
+\index{ezarri\+I\+R\+Q\+Func@{ezarri\+I\+R\+Q\+Func}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{ezarri\+I\+R\+Q\+Func}]{\setlength{\rightskip}{0pt plus 5cm}void ezarri\+I\+R\+Q\+Func (
+\begin{DoxyParamCaption}
+\item[{{\bf funtzio\+\_\+helbidea\+\_\+t}}]{func}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a331aee9c988a71f161ecae70e161fbc9}
+Sets the function to be executed inside the T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler. 
+\begin{DoxyParams}{Parameters}
+{\em func} & The pointer to the desired function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_acc51a8de5c5787c936fc16668259a6d5}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!get\+Counter@{get\+Counter}}
+\index{get\+Counter@{get\+Counter}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{get\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t get\+Counter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_acc51a8de5c5787c936fc16668259a6d5}
+Gets the current value of the counter register. \begin{DoxyReturn}{Returns}
+The counter value. 
+\end{DoxyReturn}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_ac097cc43893b179c514009627450e7ac}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!init\+I\+R\+Q\+\_\+\+T\+I\+M6@{init\+I\+R\+Q\+\_\+\+T\+I\+M6}}
+\index{init\+I\+R\+Q\+\_\+\+T\+I\+M6@{init\+I\+R\+Q\+\_\+\+T\+I\+M6}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{init\+I\+R\+Q\+\_\+\+T\+I\+M6}]{\setlength{\rightskip}{0pt plus 5cm}void init\+I\+R\+Q\+\_\+\+T\+I\+M6 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_ac097cc43893b179c514009627450e7ac}
+Initializes the timer interrupts with the basic setup. \hypertarget{_t_i_m_e_r_a_p_i_8c_aad58f47d5b5c704e7f49ea0a4f43a7c3}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!is\+Update@{is\+Update}}
+\index{is\+Update@{is\+Update}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{is\+Update}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t is\+Update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_aad58f47d5b5c704e7f49ea0a4f43a7c3}
+Returns the update flag of the counter. This flag will activate when the counter reaches the max value. After reading it the flag is cleared. \begin{DoxyReturn}{Returns}
+The update flag. 0-\/\+No update happened. 1-\/\+A update event happened. 
+\end{DoxyReturn}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_aa45627a12d9a0ab4f27dd6ff0cdd65af}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+Debug\+Mode@{set\+Debug\+Mode}}
+\index{set\+Debug\+Mode@{set\+Debug\+Mode}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+Debug\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Debug\+Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{piztua}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_aa45627a12d9a0ab4f27dd6ff0cdd65af}
+Sets the timer to stop or continue counting when a debug interruption happens. 
+\begin{DoxyParams}{Parameters}
+{\em piztua} & The mode of the timer under debug. 0-\/\+The timer continues to operate, 1-\/\+The timer is stopped. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a16efc42854a86a597d6ac93a001d8006}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+Interrupt\+Source@{set\+Interrupt\+Source}}
+\index{set\+Interrupt\+Source@{set\+Interrupt\+Source}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+Interrupt\+Source}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Interrupt\+Source (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a16efc42854a86a597d6ac93a001d8006}
+Sets the enabled sources for a I\+R\+Q generation. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & 0-\/\+All sources are enabled, 1-\/\+Only a conter overflow or underflow will generate a I\+R\+Q. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a78ae748d788787598b2bc55f95b9c521}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+Limitea@{set\+Limitea}}
+\index{set\+Limitea@{set\+Limitea}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+Limitea}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Limitea (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{counter}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a78ae748d788787598b2bc55f95b9c521}
+Sets the max counter value. 
+\begin{DoxyParams}{Parameters}
+{\em The} & max counter value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_ae82932d84c386f2a9f20e17c56469b3f}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+One\+Pulse@{set\+One\+Pulse}}
+\index{set\+One\+Pulse@{set\+One\+Pulse}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+One\+Pulse}]{\setlength{\rightskip}{0pt plus 5cm}void set\+One\+Pulse (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_ae82932d84c386f2a9f20e17c56469b3f}
+Enables or disables the one pulse mode of the timer. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & One pulse mode enabled or disabled. 0-\/\+The timer restarts itself when reaching the max counter, 1-\/\+The timer stops after reaching the max counter value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a5629e025b630604f99c5e2aae62913a2}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+Time@{set\+Time}}
+\index{set\+Time@{set\+Time}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Time (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{prescaler, }
+\item[{uint16\+\_\+t}]{counter}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a5629e025b630604f99c5e2aae62913a2}
+Sets the timer. Sets the timer prescaler and the max counter values. 
+\begin{DoxyParams}{Parameters}
+{\em prescaler} & The division factor of the timer prescaler. \\
+\hline
+{\em counter} & The max counter value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a83bcdccd05d316941c7f43473bc8041a}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+Update\+I\+R\+Q@{set\+Update\+I\+R\+Q}}
+\index{set\+Update\+I\+R\+Q@{set\+Update\+I\+R\+Q}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+Update\+I\+R\+Q}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Update\+I\+R\+Q (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a83bcdccd05d316941c7f43473bc8041a}
+Enables or disables the generation of a I\+R\+Q when a update event happens 
+\begin{DoxyParams}{Parameters}
+{\em mode} & 1-\/\+The timer generates I\+R\+Qs. 0-\/\+The I\+R\+Qs are disabled. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_adc26813f57c55f9ecff466aacdad2059}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!set\+Update\+Mode@{set\+Update\+Mode}}
+\index{set\+Update\+Mode@{set\+Update\+Mode}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{set\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Update\+Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_adc26813f57c55f9ecff466aacdad2059}
+Enables or disables the update events of the timer. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & The update mode. 0-\/\+No action, 1-\/\+Generates an update and restarts the counter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a85527e63f93bba507c8379c80221fa7b}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!start\+Counter@{start\+Counter}}
+\index{start\+Counter@{start\+Counter}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{start\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}void start\+Counter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a85527e63f93bba507c8379c80221fa7b}
+Starts the timer. \hypertarget{_t_i_m_e_r_a_p_i_8c_a56e8348746bfdb7e6da7a76e89286be5}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!stop\+Counter@{stop\+Counter}}
+\index{stop\+Counter@{stop\+Counter}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{stop\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}void stop\+Counter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a56e8348746bfdb7e6da7a76e89286be5}
+Stops the timer. \hypertarget{_t_i_m_e_r_a_p_i_8c_a0839a45f331c4c067939b9c4533bbf4d}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler@{T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler}}
+\index{T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler@{T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M6\+\_\+\+D\+A\+C\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_t_i_m_e_r_a_p_i_8c_a0839a45f331c4c067939b9c4533bbf4d}
+Handles the I\+R\+Q generated by the timer. Runs the user defined function, clears the timer pending bit and clears the N\+V\+I\+C pending bit. 
+
+\subsection{Variable Documentation}
+\hypertarget{_t_i_m_e_r_a_p_i_8c_a97d0ea879f1108a0e1d26f351618d3ca}{}\index{T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}!func\+Irq@{func\+Irq}}
+\index{func\+Irq@{func\+Irq}!T\+I\+M\+E\+R\+A\+P\+I.\+c@{T\+I\+M\+E\+R\+A\+P\+I.\+c}}
+\subsubsection[{func\+Irq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf funtzio\+\_\+helbidea\+\_\+t} func\+Irq}\label{_t_i_m_e_r_a_p_i_8c_a97d0ea879f1108a0e1d26f351618d3ca}

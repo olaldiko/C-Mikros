@@ -1,0 +1,26 @@
+var main_8c =
+[
+    [ "BUZ", "main_8c.html#aeb36ea0014f902986761fd68f46e9851", null ],
+    [ "JOYBEHERA", "main_8c.html#a98f1cd4b679c31c9006966a1f98b8883", null ],
+    [ "JOYGORA", "main_8c.html#a7fb417b931f7b43674562f20b2bf626e", null ],
+    [ "LED1", "main_8c.html#a8aa85ae9867fabf70ec72cd3bf6fb6b9", null ],
+    [ "LED2", "main_8c.html#ad09fe5bf321b9a2de26bd5e5b9af6424", null ],
+    [ "LED3", "main_8c.html#a4b7ff8e253a7412f83deba3a447028a8", null ],
+    [ "LED4", "main_8c.html#ae048837f20072bed467332b1bd1da9fa", null ],
+    [ "PERIOD", "main_8c.html#af281425e62298bac2df0fbe8690a4844", null ],
+    [ "PORTBUZ", "main_8c.html#a455f87263617c69a4b46e38c1513cf71", null ],
+    [ "PORTJOY", "main_8c.html#a7bf08e8941b3c779f99661780e576070", null ],
+    [ "PORTLED", "main_8c.html#a25f00bfbfb09fb620230c6ccb32979b1", null ],
+    [ "PRESC", "main_8c.html#a9c168a1dca42d6d9da6d435ef7e4d7f1", null ],
+    [ "SYSCFG_RCC", "main_8c.html#ab5a83a72d519e10a0fcc8adbb15aab43", null ],
+    [ "EXTI9_5_IRQHandler", "main_8c.html#a7b2096b8b2643286dc3a7e5110e5ae85", null ],
+    [ "initGPIO", "main_8c.html#ad442c62b85591b16bbebcc35c9e63dc3", null ],
+    [ "initIRQ", "main_8c.html#a0b2f707f9d53b1b191fc3f1f832a3a5a", null ],
+    [ "initTimer", "main_8c.html#a02922529b60419a94afe8f369dda070b", null ],
+    [ "main", "main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
+    [ "timerInterrupzioa", "main_8c.html#abf4df587996c332a2915fa183043beac", null ],
+    [ "cntoff", "main_8c.html#ac3607d710f0a96c20efe074fe0b96588", null ],
+    [ "cnton", "main_8c.html#a61b96c8a17854d6fd2ab07d3c2e9382c", null ],
+    [ "ledstat", "main_8c.html#aeeb91e77478191dea7efbedb889d24d7", null ],
+    [ "pot", "main_8c.html#a9c77d63090b288b87e0a6e3cd4da3082", null ]
+];
