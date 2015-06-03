@@ -29,7 +29,7 @@ uint16_t getCounter(void) {
 }
 /**
 *Sets the max counter value.
-* @param The max counter value.
+* @param counter The max counter value.
 */
 void setLimitea(uint16_t counter) {
 	TIM6->ARR = counter;
@@ -39,11 +39,11 @@ void setLimitea(uint16_t counter) {
 *This flag will activate when the counter reaches the max value. After reading it the flag is cleared.
 * @return The update flag. 0-No update happened. 1-A update event happened.
 */
-uint16_t isUpdate(void) {
+uint16_t isUpdate(uint8_t clear) {
 	uint16_t update;
 	update = TIM6->SR;
 	update &= 1;
-	if(update == 1) {
+	if((update == 1) &&(clear == 1)) {
 		TIM6->SR = 0x00;
 	}
 	return update;
@@ -131,7 +131,7 @@ void clearInterrupt(void) {
 */
 void TIM6_DAC_IRQHandler(void){
 	funcIrq();
-	TIM6->SR = 0x0;
+	clearInterrupt();
 	NVIC_ClearPendingIRQ(TIM6_DAC_IRQn);
 }
 /**
@@ -150,5 +150,18 @@ void initIRQ_TIM6(void){
 	NVIC_EnableIRQ(TIM6_DAC_IRQn);
 	
 }
+
+void resetCounter(){
+	stopCounter();
+	TIM6->CNT = 0;
+}
+
+void delay(uint16_t microsec){
+	resetCounter();
+	setTime(PRESC, microsec);
+	startCounter();
+	while(!isUpdate(1));
+}
+
 #endif
 

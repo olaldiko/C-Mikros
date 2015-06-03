@@ -3,92 +3,59 @@
 #include <stm32f407xx.h>
 #include "GPIOAPI.h"
 
-/**
-*Enables or disables the corresponding GPIO port.
-* @param portua The corresponding gpio port. 0-9
-* @param egoera 0 Disabled, 1 Enabled
-*/
-void aktdesgpio(int portua, int egoera) {
-	if((portua >= 0)&&(portua <=10)) {
-			if(egoera == 0) { 
-				RCC->AHB1ENR &= ~(1<<portua);
-			} else {
-				RCC->AHB1ENR |= (1<<portua);
+
+void aktdesgpio(int portua, int egoera){
+		RCC_TypeDef *rcc = RCC;
+	if((portua >= 0)&&(portua <=10)){
+			if(egoera == 0){
+				rcc->AHB1ENR &= ~(1<<portua);
+			}else{
+				rcc->AHB1ENR |= (1<<portua);
 			}				
 	}
 }
-/**
-*Puts the corresponding output pin in High or low states.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-* @param egoera 0 Low output, 1 High output.
-*/
-void aktdesgpioout(int portua, int pina, int egoera) {
-	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400))); /**<The base address + the corresponding port * the offset*/
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <=15)) {
-			if(egoera == 0) {
+void aktdesgpioout(int portua, int pina, int egoera){
+	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <=15)){
+			if(egoera == 0){
 				gpio->ODR &= ~(1<<pina);
-			} else {
+			}else{
 				gpio->ODR |= (1<<pina);
 			}
 		}
 	}
 }
-/**
-*Puts the corresponding output pin in LOW state.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-*/
-void itzalipinout(int portua, int pina) {
+void itzalipinout(int portua, int pina){
 		GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <=15)) {
-			gpio->BSRRL |= (1 <<pina); 
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <=15)){
+			gpio->BSRRH |= (1 <<pina); 
 		}
 	}
 }
-/**
-*Puts the corresponding output pin in HIGH state.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-*/
-void piztupinout(int portua, int pina) {
+void piztupinout(int portua, int pina){
 		GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <=15)) {
-			gpio->BSRRH |= (1 <<(pina)); 
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <=15)){
+			gpio->BSRRL |= (1 <<(pina)); 
 		}
 	}
 }
-/**
-*Changes the output state of the output pin. From LOW to HIGH and from HIGH to LOW.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-*/
-void aldatupinout(int portua, int pina) {
+void aldatupinout(int portua, int pina){
 	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <=15)) {
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <=15)){
 			gpio->ODR ^=(1<<pina);
 		}
 	}
 }
-/**
-*Changes the pin mode of the GPIO.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-* @param modua The mode of the pin. 1-4
-* 1->Pin in Digital input mode.
-* 2->Pin in Digital output mode.
-* 3->Pin in Alternate function mode.
-* 4->Pin in Analog input mode.
-*/
-void setpinmode(int portua, int pina, int modua) {
+
+void setpinmode(int portua, int pina, int modua){
 	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <=	15)) {
-		switch(modua) {
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <=	15)){
+		switch(modua){
 			case 1:
 				//Sarrera
 				gpio->MODER &=~(3<<(pina*2));
@@ -111,28 +78,19 @@ void setpinmode(int portua, int pina, int modua) {
 		}
 	}
 }
-/**
-*Changes the mode for the pull-up and pull-down resistors of the input pin.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-* @param modua The mode of the pin. 1-3
-* Mode 1-> No pull-up or pull-down resistors enabled.
-* Mode 2-> Pull-up resistor enabled.
-* Mode 3-> Pull-down resistor enabled.
-*/
-void setResistorMode(int portua, int pina, int modua) {
+void setResistorMode(int portua, int pina, int modua){
 	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <= 15)) {
-		switch(modua) {
-			case 1: //00
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <= 15)){
+		switch(modua){
+			case 1: //00 Ezer
 				gpio->PUPDR &=~(3<<(pina*2));
 				break;
-			case 2: //01
+			case 2: //01 pull-up
 				gpio->PUPDR |= (1<<(pina*2));
 				gpio->PUPDR &= ~(2<<(pina*2));
 				break;
-			case 3: //10
+			case 3: //10 pull-down
 				gpio->PUPDR |= (2<<(pina*2));
 				gpio->PUPDR &= ~(1<<(pina*2));
 				break;
@@ -140,27 +98,30 @@ void setResistorMode(int portua, int pina, int modua) {
 		}
 	}
 }
-/**
-* Reads the state of the input pin.
-* @param portua The corresponding GPIO port. 0-9
-* @param pina The corresponding pin. 0-15
-* @return The state of the pin. 0-Low, 1-High.
-*/
-uint32_t irakurripin(int portua, int pina) {
+uint32_t irakurripin(int portua, int pina){
 			GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(portua*0x400)));
-			uint32_t erregistroa = gpio->IDR;
-	if((portua >= 0)&&(portua <= 10)) {
-		if((pina >= 0)&&(pina <=	15)) {
-				erregistroa &= (1<<pina);
-				if(erregistroa > 0 ) {
+			//uint32_t erregistroa = gpio->IDR;
+	if((portua >= 0)&&(portua <= 10)){
+		if((pina >= 0)&&(pina <= 15)){
+				if((gpio->IDR & (1<<pina)) > 0 ){
 						return 1;
-				} else {
+				}else{
 						return 0;
 				}
 		}
 	}
 	return 0;
 }
-
+void setOutputMode(uint8_t port, uint8_t pin, uint8_t mode){
+	GPIO_TypeDef *gpio = (GPIO_TypeDef *)((GPIOA_BASE+(port*0x400)));
+	if((port >= 0)&&(port <= 10)){
+		if((pin >= 0)&&(pin <= 15)){
+			switch(mode){
+				case 0: gpio->OTYPER &= ~(1<<pin); break;
+				case 1: gpio->OTYPER |= (1<<pin); break;
+			}
+		}
+	}
+}
 
 #endif

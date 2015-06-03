@@ -47,7 +47,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>practicairq</OutputName>
+          <OutputName>OneWire</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -123,7 +123,7 @@
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
           <Simulator>
-            <UseSimulator>1</UseSimulator>
+            <UseSimulator>0</UseSimulator>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -135,7 +135,7 @@
             <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
-            <UseTarget>0</UseTarget>
+            <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -147,7 +147,7 @@
             <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>4</TargetSelection>
+          <TargetSelection>1</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -161,7 +161,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>Segger\JL2CM3.dll</Driver>
+            <Driver>BIN\UL2CM3.DLL</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -293,17 +293,17 @@
                 <Size>0x0</Size>
               </XRAM>
               <OCR_RVCT1>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT1>
               <OCR_RVCT2>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT2>
               <OCR_RVCT3>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT3>
@@ -313,7 +313,7 @@
                 <Size>0x100000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT5>
@@ -409,24 +409,19 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
+              <FileName>test.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\test.c</FilePath>
             </File>
             <File>
-              <FileName>TIMERAPI.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APIs\Timer\TIMERAPI.c</FilePath>
-            </File>
-            <File>
-              <FileName>GPIOAPI.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APIs\GPIO\GPIOAPI.c</FilePath>
-            </File>
-            <File>
-              <FileName>TIMERAPI.h</FileName>
+              <FileName>OneWire.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\APIs\Timer\TIMERAPI.h</FilePath>
+              <FilePath>.\OneWire.h</FilePath>
+            </File>
+            <File>
+              <FileName>OneWire.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\OneWire.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -474,13 +469,19 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="ETH" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4x7_9 HAL">
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="GPIO" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="I2C" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL DMA RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
@@ -493,6 +494,18 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="RCC" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL GPIO">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="TIM" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL DMA">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="UART" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL DMA">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
         <targetInfos>
           <targetInfo name="Target 1"/>

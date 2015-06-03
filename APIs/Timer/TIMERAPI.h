@@ -4,6 +4,11 @@
 #include <stm32f4xx.h>
 
 
+
+#define CLEAR_UPDATE 1
+#define KEEP_UPDATE 0
+#define DELAY_PRESC 16
+
 // Sortu funtzioen helbideak gordetzeko datu mota
 typedef void (*funtzio_helbidea_t)(void);
 
@@ -17,11 +22,13 @@ uint16_t getCounter(void);
 //Aldatu limitea
 void setLimitea(uint16_t counter);
 //Lortu update ebentua
-uint16_t isUpdate(void);
+uint16_t isUpdate(uint8_t clear);
 //Hasi kontatzen
 void startCounter(void);
 //Gelditu kontadorea
 void stopCounter(void);
+//Reset counter
+void resetCounter(void);
 //Aktibatu edo desaktibatu update-a
 void setUpdateMode(int mode);
 //Gelditu timerrak breakpointetan
@@ -40,6 +47,9 @@ void initIRQ_TIM6(void);
 void ezarriIRQFunc(funtzio_helbidea_t func);
 //Inizializatu timerraren interrupzioak
 void initIRQ_TIM6(void);
+//Simple delay function
+void delay(uint16_t microsec);
+
 #endif
 
 
